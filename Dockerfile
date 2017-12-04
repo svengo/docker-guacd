@@ -59,6 +59,7 @@ ENV \
 WORKDIR /tmp
 RUN \
   apt-get update -y && \
+  apt-get upgrade -y && \
   apt-get install -y $BUILD_DEPENDENCIES && \
   \
   wget --no-verbose --output-document="guacamole-server-${GUACD_VERSION}.tar.gz" "http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUACD_VERSION}/source/guacamole-server-${GUACD_VERSION}.tar.gz" && \
